@@ -1,0 +1,10 @@
+#containerCustom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  position: relative;
+  flex-wrap: wrap;
+  background: linear-gradient(to top left, #1c65c5, #02166e);
+}

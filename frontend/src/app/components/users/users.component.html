@@ -1,0 +1,36 @@
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="
+            let user of userList
+              | paginate
+                : {
+                    id: 'listing_pagination',
+                    itemsPerPage: per_page,
+                    currentPage: page,
+                    totalItems: total
+                  }
+          " class="ui middle aligned selection list animated">
+      <td class="item" (click)='userDetail(user.id)'>
+        <img class="ui avatar image" src="{{ user.avatar }}" />
+        <div class="content">
+          <div class="header">{{ user.first_name }} {{ user.last_name }}</div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th>
+
+        <pagination-controls class='listing_pagination' id="listing_pagination" maxSize="5" directionLinks="true"
+          (pageChange)="pageChanged($event)"></pagination-controls>
+
+      </th>
+    </tr>
+  </tfoot>
+</table>

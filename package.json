@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "pre-build": "cd ./frontend && npm install cd .././backend && npm install",
+        "build-front": "cd ./frontend && npm run build",
+        "build-app": "npm run pre-build && npm run build-front",
+        "start-app": "npm run build-app && cd ./backend && npm run start"
+    }
+}
